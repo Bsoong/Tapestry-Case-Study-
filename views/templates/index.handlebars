@@ -1,0 +1,54 @@
+<link rel = "stylesheet" href = "/public/style.css">
+{{> NavigationBar}}
+<h1>Tapestry Case Study Interactive Employee Spotlight</h1>
+<body onload="initialize()">
+    <div id="map_canvas"></div>
+</body>
+{{> ConstScripts}}
+<script>
+var points = [["London!" , 51.5074,.1278, 11, 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+   ["Taipei!", 25.0330, 121.5654, 10, 'https://theloop.tapestry.com/group/coach/-/david-lipford?inheritRedirect=true&redirect=%2Fgroup%2Fcoach%2Fhome'],
+   ["Singapore!", 1.3521, 103.8198, 9, 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+   ["Tokyo!", 35.6762, 139.6503, 8 , 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+   ["Hong Kong!", 22.3193, 114.1694, 7, 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+   ["Dongguan!", 23.0207, 113.7518, 6, 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+   ["Shanghai!", 31.2304, 121.4737, 5, 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+   ["Kuala Lumpur!", 3.1390, 101.6869, 4 , 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+   ["Hudson Yards HQ!", 40.7128, -73.935242, 3, 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+   ["Jacksonville!", 30.3322, -81.6557, 2, 'https://theloop.tapestry.com/group/coach/employee-spotlight'],
+];
+
+function setMarkers(map, locations) {
+  var shape = {
+    coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+    type: 'poly'
+  };
+
+  for (var i = 0; i < locations.length; i++) {
+    var place = locations[i];
+    var myLatLng = new google.maps.LatLng(place[1], place[2]);
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      shape: shape,
+      title: place[0],
+      zIndex: place[3],
+      url: place[4]
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+      window.location.href = this.url;
+    });
+  }
+}
+
+function initialize() {
+  var myOptions = {
+    center: new google.maps.LatLng(39.0742, 21.8243),
+    zoom: 3,
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+  setMarkers(map, points);
+}
+</script>
+
+{{> footerP}}

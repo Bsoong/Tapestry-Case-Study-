@@ -21,5 +21,14 @@ router.get("/goal", async(req, res) => {
     }
 });
 
+router.get("/countries/HudsonYards", async(req, res) => {
+    try{
+      res.render("./templates/HudsonYards", {title: "Hudson Yards Page"});
+    } catch(e) {
+      console.log(e);
+      res.status(400);
+    }
+});
+
 
 module.exports = router;

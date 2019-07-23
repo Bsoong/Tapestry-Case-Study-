@@ -23,3 +23,16 @@ footer {
 .list {
   font-size: 200%;
 }
+.format {
+  text-align: center;
+}
+
+.format p {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.format iframe {
+  border-style: solid;
+  border-width: 5px;
+
+}

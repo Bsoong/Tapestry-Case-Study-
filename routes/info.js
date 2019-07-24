@@ -30,5 +30,14 @@ router.get("/countries/HudsonYards", async(req, res) => {
     }
 });
 
+router.get("/countries/HongKong", async(req, res) => {
+    try{
+      res.render("./templates/HongKong", {title: "Hong Kong Page"});
+    } catch(e) {
+      console.log(e);
+      res.status(400);
+    }
+});
+
 
 module.exports = router;

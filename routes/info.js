@@ -39,5 +39,13 @@ router.get("/countries/HongKong", async(req, res) => {
     }
 });
 
+router.get("/TTalk", async(req, res) => {
+    try{
+      res.render("./templates/TTalk", {title: "Tapestry Talk"});
+    } catch(e) {
+      console.log(e);
+      res.status(400);
+    }
+});
 
 module.exports = router;

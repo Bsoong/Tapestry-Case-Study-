@@ -43,3 +43,29 @@ footer {
     padding: 10px;
     box-sizing: border-box;
 }
+.test {
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgba(0, 50, 94, 0.2);
+  margin: 20px auto;
+  border: 5px solid rgb(40, 40, 40);
+  border-radius: 2px;
+  width: 600px;
+}
+
+input[type="text"] {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+input[type="URL"] {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+input[type="file"] {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}

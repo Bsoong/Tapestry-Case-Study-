@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "/public/country.css">
+    {{> NavigationBar}}
+    <div class="page-container">
+  <div class="page-content">
+    <h1>Add an Employee Spotlight!</h1>
+    <form method = "POST" id = "spotForm">
+      <div class = "test">
+        <div class = "fullName">
+            <label for = "fName">Name</label>
+            <input type = "text" class = "form-control" id = "fName" name = "fullName" required>
+        </div>
+        <div class = "title">
+            <label for = "title">Title</label>
+            <input type = "text" class = "form-control" id = "title" name = "title" required>
+        </div>
+        <div class="officeName">
+            <label for="office">Office Name</label>
+            <input type="text" class="form-control" id="office" name = "officeInput" required>
+        </div>
+        <div class="video">
+            <label for="url">Video URL</label>
+            <input type="url" class="form-control" id="url" name = "URL" required>
+        </div>
+        <div class="Description">
+            <label for="desc">Description</label>
+            <input type="text" class="form-control" id="desc" name = "descInput" required>
+        </div>
+        <div class = "Image">
+          <label for = "pic">Upload a picture!</label>
+          <input type = "file" class = "form-control" id = "pic" accept = "image/*">
+        <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+    </div>
+    </div>
